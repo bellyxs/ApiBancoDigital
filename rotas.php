@@ -6,6 +6,7 @@ use ApiBancoDigital\Controller\ContaController;
 use ApiBancoDigital\Controller\ChavePixController;
 use ApiBancoDigital\Controller\TransacaoController;
 
+
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch ($url) {
