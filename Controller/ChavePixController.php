@@ -7,6 +7,7 @@ use Exception;
 
 class ChavePixController extends Controller
 {
+
     public static function salvar() : void
     {
         try
@@ -27,6 +28,10 @@ class ChavePixController extends Controller
             parent::getExceptionAsJSON($e);
         }
     }
+
+    
+
+    
 
     public static function listar() : void
     {

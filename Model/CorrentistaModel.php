@@ -6,31 +6,13 @@ use ApiBancoDigital\DAO\CorrentistaDAO;
 class CorrentistaModel extends Model {
     public $id, $nome, $cpf, $senha, $data_nasc;
 
-    public function save()
-    {
-        $dao = new CorrentistaDAO();
 
-        if(empty($this->id))
-        {
-            $dao->insert($this);
-        } else {
-            $dao->update($this);
-        }
+
+    public function save() : ?CorrentistaModel
+    {
+        return (new CorrentistaDAO())->save($this);     
 
     }
-
-    public function getAllRows()
-    {
-        $dao = new CorrentistaDAO();
-
-        $this->rows = $dao->select();
-    }
-
-     public function delete()
-    {
-        (new CorrentistaDAO())->delete($this->id);
-    }
-
 
     public function getById(int $id)
     {
@@ -43,5 +25,10 @@ class CorrentistaModel extends Model {
         $dao = new CorrentistaDAO();
 
         return $dao->getCorrentistaByCpfAndSenha($cpf, $senha);
+    }
+
+    public function getCorrentistaByCpfAndSenha($cpf, $senha) : CorrentistaModel
+    {      
+        return (new CorrentistaDAO())->selectCorrentistaByCpfAndSenha($cpf, $senha);
     }
 }

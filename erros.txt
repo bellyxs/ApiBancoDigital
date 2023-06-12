@@ -1,6 +1,6 @@
-#0 D:\Bella 3DS\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\DAO\CorrentistaDAO.php(23): PDOStatement->execute()
-#1 D:\Bella 3DS\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\Model\CorrentistaModel.php(16): ApiBancoDigital\DAO\CorrentistaDAO->insert(Object(ApiBancoDigital\Model\CorrentistaModel))
-#2 D:\Bella 3DS\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\Controller\CorrentistaController.php(25): ApiBancoDigital\Model\CorrentistaModel->save()
-#3 D:\Bella 3DS\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\rotas.php(16): ApiBancoDigital\Controller\CorrentistaController::save()
-#4 D:\Bella 3DS\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\index.php(7): include('D:\\Bella 3DS\\Ap...')
+#0 E:\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\DAO\CorrentistaDAO.php(23): PDOStatement->execute()
+#1 E:\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\Model\CorrentistaModel.php(15): ApiBancoDigital\DAO\CorrentistaDAO->insert(Object(ApiBancoDigital\Model\CorrentistaModel))
+#2 E:\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\Controller\CorrentistaController.php(25): ApiBancoDigital\Model\CorrentistaModel->save()
+#3 E:\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\rotas.php(17): ApiBancoDigital\Controller\CorrentistaController::save()
+#4 E:\ApiBancoDigital\ApiBancoDigital-master\ApiBancoDigital\index.php(7): include('E:\\ApiBancoDigi...')
 #5 {main}

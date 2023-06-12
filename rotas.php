@@ -14,12 +14,15 @@ switch ($url) {
     /*CORRENTISTA*/
 
     case '/correntista/save':
-       CorrentistaController::save();
+       CorrentistaController::salvar();
     break;
 
-    case 'correntista/entrar':
-        CorrentistaController::auth();
+    case '/correntista/entrar':
+        CorrentistaController::login();
+
     break;
+
+
 
     /*CONTA*/
     case 'conta/entrar':
@@ -47,7 +50,7 @@ switch ($url) {
     case 'conta/pix/receber':
         /*TransacaoController::*/
     break;
-
+ 
    
 
     default:

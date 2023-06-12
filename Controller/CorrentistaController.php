@@ -9,21 +9,22 @@ use Exception;
 class CorrentistaController extends Controller
 {
 
-    public static function save() : void
+
+    
+    public static function salvar() : void
     {
         try
         {
             $json_obj = json_decode(file_get_contents('php://input'));
 
             $model = new CorrentistaModel();
-            $model->id = $json_obj->Id;
-            $model->nome = $json_obj->Nome;
-            $model->cpf = $json_obj->Cpf;
-            $model->senha = $json_obj->Senha;
-            $model->data_nasc = $json_obj->Data_Nasc;
+            $model->id = $json_obj->id;
+            $model->nome = $json_obj->nome;
+            $model->cpf = $json_obj->cpf;
+            $model->senha = $json_obj->senha;
+            $model->data_nasc = $json_obj->data_nasc;            
 
-            $model->id = $model->save();
-            parent::getResponseAsJSON($model);
+            parent::getResponseAsJSON($model->save());
               
         } catch (Exception $e) {
 
@@ -41,41 +42,20 @@ class CorrentistaController extends Controller
 		parent::getResponseAsJSON($model->auth(isset($_GET['cpf']), $_GET['senha']));		
 	}
 
-    public static function delete() : void
-    {
-        try 
-        {
-            $model = new CorrentistaModel();
-            
-            $model->id = parent::getIntFromUrl(isset($_GET['id']) ? $_GET['id'] : null);
 
-            $model->delete();
-
-           
-        } catch (Exception $e) {
-
-            parent::LogError($e);
-            parent::getExceptionAsJSON($e);
-        }
-    }
-
-    public static function buscar() : void
+        public static function login()
     {
         try
         {
+
             $model = new CorrentistaModel();
-            
-            $q = json_decode(file_get_contents('php://input'));
-            
-    
-            $model->getAllRows($q);
 
-            parent::getResponseAsJSON($model->rows);
-              
-        } catch (Exception $e) {
+            parent::getResponseAsJSON($model->getCorrentistaByCpfAndSenha($_GET['cpf'], $_GET['senha']));
 
+        } catch(Exception $e) {
+            
             parent::LogError($e);
             parent::getExceptionAsJSON($e);
-        }
+        }  
     }
 }
