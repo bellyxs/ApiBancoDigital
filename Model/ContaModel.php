@@ -5,7 +5,7 @@ namespace ApiBancoDigital\Model;
 use ApiBancoDigital\DAO\ContaDAO;
 
 class ContaModel extends Model {
-    public $id, $tipo, $saldo, $limite, $id_correntista;
+    public $id, $numero, $tipo, $saldo, $limite, $id_correntista;
 
     public $rows;
 
@@ -44,4 +44,17 @@ class ContaModel extends Model {
 
         return($obj) ? $obj : new ContaModel();
     }
+
+    public function getContaByIdCorrentista(int $id_correntista)
+    {
+            $dao = new ContaDAO();
+
+            $this->rows = $dao->selectByIdCorrentista($id_correntista);
+    }
+
+    public function getContaByNumeroConta(string $numero)
+    {
+        return (new ContaDAO())->selectByNumeroConta($numero);
+    }
+  
 }

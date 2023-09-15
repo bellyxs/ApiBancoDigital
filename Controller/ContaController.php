@@ -19,6 +19,7 @@ class ContaController extends Controller
             $model->tipo = $json_obj->Tipo;
             $model->saldo = $json_obj->Saldo;
             $model->limite = $json_obj->Limite;
+            $model->numero = $json_obj->Numero;
             $model->id_correntista = $json_obj->Id_correntista;
            
 
@@ -62,4 +63,21 @@ class ContaController extends Controller
             parent::getExceptionAsJSON($e);
         }
     }
-}
+
+        public static function SelecionarConta() : void
+        {
+            try
+            {
+                $json_obj = json_decode(file_get_contents('php://input'));
+    
+                parent::getResponseAsJSON((new ContaModel())->getContaByNumeroConta($json_obj->numero));
+            }
+            catch(Exception $e)
+            {
+                parent::getResponseAsJSON($e);
+            }
+        }
+    
+    
+    }
+    
