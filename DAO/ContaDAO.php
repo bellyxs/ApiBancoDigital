@@ -1,5 +1,6 @@
 <?php
 
+
 namespace ApiBancoDigital\DAO;
 use ApiBancoDigital\Model\ContaModel;
 use \PDO;
