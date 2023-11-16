@@ -31,6 +31,7 @@ class ChavePixDAO extends DAO
         $stmt->bindValue(1, $model->tipo);
         $stmt->bindValue(2, $model->chave);
         $stmt->bindValue(3, $model->id);
+        $stmt->bindValue(4, $model->id_conta);
         $stmt->execute();
     }
 

@@ -46,12 +46,15 @@ switch ($url) {
     case 'conta/pix/adicionar':
         ChavePixController::salvar();
     break;
-    
+
 
     case 'conta/pix/receber':
         /*TransacaoController::*/
     break;
  
+    case '/conta/pix/listar':
+        ChavePixController::listar();
+     break;
    
 
     default:
