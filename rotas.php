@@ -43,8 +43,8 @@ switch ($url) {
     
     
     /*TRANSACAO*/
-    case 'conta/pix/enviar':
-        /*TransacaoController::*/
+    case 'conta/pix/adicionar':
+        ChavePixController::salvar();
     break;
 
     case 'conta/pix/receber':
